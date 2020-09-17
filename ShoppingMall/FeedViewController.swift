@@ -14,9 +14,14 @@ class FeedViewController: UIViewController {
     
     var products:[Product]?
     
+    private var selectedProduct : Product?
+    
+    
+    
     struct Storyboard{
         
         static let feedProductCell = "FeedProductCell"
+        static let showProductDetail = "ShowProductDetail"
     
     }
     
@@ -27,13 +32,9 @@ class FeedViewController: UIViewController {
         
         fetchProducts()
         
-//        tableView.estimatedRowHeight = 480
-        
-//        tableView.rowHeight = UITableView.automaticDimension
-        
-        
 
     }
+    
     
     func fetchProducts(){
         
@@ -45,6 +46,16 @@ class FeedViewController: UIViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == Storyboard.showProductDetail{
+            
+            if let productDetailVC = segue.destination as? ProductDetailViewController{
+                
+                productDetailVC.product = selectedProduct //클릭했을때 selected에 정보가 담겨짐.
+            }
+        }
+    }
 }
 
 extension FeedViewController: UITableViewDelegate, UITableViewDataSource{
@@ -65,15 +76,25 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //FeedProductCell
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.feedProductCell, for: indexPath) as! FeedProductTableViewCell
         
-        cell.productImage.image = products![indexPath.row].images?.first
-        cell.productName.text = products![indexPath.row].name
-        cell.productPrice.text = "$ \(products![indexPath.row].price ?? 0)"
-        
+        if let products = products{
+            
+            let product = products[indexPath.row]
+            cell.product = product
+            cell.selectionStyle = .none
+        }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        selectedProduct = products![indexPath.row]
+        performSegue(withIdentifier: Storyboard.showProductDetail, sender: nil)
+        
+        
+
     }
 }

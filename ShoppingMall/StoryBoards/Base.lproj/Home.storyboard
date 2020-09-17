@@ -27,7 +27,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="480"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f9j-5O-beM">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f9j-5O-beM">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="f9j-5O-beM" secondAttribute="height" multiplier="1:1" id="5qD-Tn-HUa"/>
@@ -90,11 +90,168 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="tableView" destination="69d-q5-QX6" id="952-kg-E6m"/>
+                        <segue destination="Rjp-st-Icc" kind="show" identifier="ShowProductDetail" id="9vJ-al-D0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="376.81159420289856" y="-6.0267857142857144"/>
+        </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="RS2-vn-8ZD">
+            <objects>
+                <viewController id="Rjp-st-Icc" customClass="ProductDetailViewController" customModule="ShoppingMall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ozm-zQ-X4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1217"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2XL-8b-E2Q">
+                                <rect key="frame" x="0.0" y="88" width="414" height="1129"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="IqD-1f-0HG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNh-Jp-y7g">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                            <connections>
+                                                <segue destination="p4B-Iu-fke" kind="embed" id="YsA-fk-Uo8"/>
+                                            </connections>
+                                        </containerView>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-SM-Upw">
+                                            <rect key="frame" x="187.5" y="357" width="39" height="37"/>
+                                        </pageControl>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="gNh-Jp-y7g" firstAttribute="top" secondItem="IqD-1f-0HG" secondAttribute="top" id="73M-k5-ird"/>
+                                        <constraint firstAttribute="trailing" secondItem="gNh-Jp-y7g" secondAttribute="trailing" id="BE1-IQ-rAt"/>
+                                        <constraint firstItem="gNh-Jp-y7g" firstAttribute="leading" secondItem="IqD-1f-0HG" secondAttribute="leading" id="T5p-nb-ZIV"/>
+                                        <constraint firstAttribute="bottom" secondItem="fSI-SM-Upw" secondAttribute="bottom" constant="20" id="cqm-Eo-9HD"/>
+                                        <constraint firstAttribute="bottom" secondItem="gNh-Jp-y7g" secondAttribute="bottom" id="e9I-T5-40n"/>
+                                        <constraint firstItem="fSI-SM-Upw" firstAttribute="centerX" secondItem="IqD-1f-0HG" secondAttribute="centerX" id="eqS-tA-LdZ"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDetailCell" rowHeight="180" id="DUP-xV-dnk" customClass="ProductDetailTableViewCell" customModule="ShoppingMall" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="442" width="414" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DUP-xV-dnk" id="xzx-f1-1fq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NIKE FREE RN FLKNIT 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ib-uH-xBX">
+                                                    <rect key="frame" x="124.5" y="30" width="165" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmq-B9-usU">
+                                                    <rect key="frame" x="20" y="76.5" width="374" height="53.5"/>
+                                                    <string key="text">LIGHTER THAN EVER! The Nike Air Max 1 Ultra 2.0 Flyknit Men's Shoe updates the iconic original with an ultra-lightweight upper while keeping the plush, time-tested Max Air cushioning.</string>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6ib-uH-xBX" firstAttribute="top" secondItem="xzx-f1-1fq" secondAttribute="top" constant="30" id="aPm-eK-YZf"/>
+                                                <constraint firstItem="6ib-uH-xBX" firstAttribute="centerX" secondItem="xzx-f1-1fq" secondAttribute="centerX" id="hPQ-Q4-uS6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="wmq-B9-usU" secondAttribute="bottom" constant="50" id="ACY-PB-k5J"/>
+                                            <constraint firstAttribute="trailing" secondItem="wmq-B9-usU" secondAttribute="trailing" constant="20" id="W2V-Fj-8up"/>
+                                            <constraint firstItem="wmq-B9-usU" firstAttribute="leading" secondItem="DUP-xV-dnk" secondAttribute="leading" constant="20" id="bdD-H5-bRI"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="productDescription" destination="wmq-B9-usU" id="DaL-Q8-FuK"/>
+                                            <outlet property="productName" destination="6ib-uH-xBX" id="Vvv-cm-8Py"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BuyButtonCell" rowHeight="65" id="zyn-mM-TWf" customClass="BuyButtonTableViewCell" customModule="ShoppingMall" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="622" width="414" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zyn-mM-TWf" id="hqV-B6-OrE">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmM-1p-4KJ">
+                                                    <rect key="frame" x="12" y="10" width="390" height="45"/>
+                                                    <color key="backgroundColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="Q4Z-vQ-HXV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                                    <state key="normal" title="BUY $160">
+                                                        <color key="titleColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ZmM-1p-4KJ" secondAttribute="trailing" constant="12" id="7lb-wS-Lv7"/>
+                                            <constraint firstItem="ZmM-1p-4KJ" firstAttribute="centerY" secondItem="zyn-mM-TWf" secondAttribute="centerY" id="OTS-XM-le3"/>
+                                            <constraint firstItem="ZmM-1p-4KJ" firstAttribute="leading" secondItem="zyn-mM-TWf" secondAttribute="leading" constant="12" id="dMt-wp-I9o"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="buyButton" destination="ZmM-1p-4KJ" id="c66-4u-iKE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ShowProductDetailCell" rowHeight="65" id="XIE-nc-wnL" customClass="ShowDetailTableViewCell" customModule="ShoppingMall" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="687" width="414" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XIE-nc-wnL" id="zaj-CY-vjz">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="683-ka-EQr">
+                                                    <rect key="frame" x="12" y="16" width="102" height="33"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="15"/>
+                                                    <state key="normal" title="PRODUCT DETAILS">
+                                                        <color key="titleColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="683-ka-EQr" firstAttribute="leading" secondItem="XIE-nc-wnL" secondAttribute="leading" constant="12" id="Wxh-sq-t6a"/>
+                                            <constraint firstItem="683-ka-EQr" firstAttribute="centerY" secondItem="XIE-nc-wnL" secondAttribute="centerY" id="Yba-PC-S2O"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="400" id="z3a-Ge-vEx">
+                                        <rect key="frame" x="0.0" y="752" width="414" height="400"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z3a-Ge-vEx" id="D90-hY-I33">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rjp-st-Icc" id="xuc-bj-7UW"/>
+                                    <outlet property="delegate" destination="Rjp-st-Icc" id="JwT-82-aff"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2XL-8b-E2Q" firstAttribute="bottom" secondItem="Ita-q5-aew" secondAttribute="bottom" id="H0c-lu-wah"/>
+                            <constraint firstItem="2XL-8b-E2Q" firstAttribute="leading" secondItem="Ita-q5-aew" secondAttribute="leading" id="Hbn-Ia-nLQ"/>
+                            <constraint firstItem="2XL-8b-E2Q" firstAttribute="trailing" secondItem="Ita-q5-aew" secondAttribute="trailing" id="nba-PP-WH3"/>
+                            <constraint firstItem="2XL-8b-E2Q" firstAttribute="top" secondItem="Ita-q5-aew" secondAttribute="top" id="yfn-c7-cbe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ita-q5-aew"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ddy-dF-bcW"/>
+                    <size key="freeformSize" width="414" height="1300"/>
+                    <connections>
+                        <outlet property="tableView" destination="2XL-8b-E2Q" id="32b-vy-ab7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G0Z-dk-DkG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178.2608695652175" y="-354.24107142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3MO-L0-chL">
@@ -114,6 +271,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPL-A8-C2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-437.68115942028987" y="-6.0267857142857144"/>
+        </scene>
+        <!--Product Image View Controller-->
+        <scene sceneID="ROR-V9-CD3">
+            <objects>
+                <viewController id="p4B-Iu-fke" customClass="ProductImageViewController" customModule="ShoppingMall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xCh-2S-3C6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sfi-8J-Brj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1968" y="-624"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="HYb-7W-S4s">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="JAF-qu-MiE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEw-pO-EDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2657" y="-466"/>
         </scene>
     </scenes>
     <resources>

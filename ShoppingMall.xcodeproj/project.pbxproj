@@ -20,6 +20,11 @@
 		497D6C5B251363F6007DE651 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C5A251363F6007DE651 /* Product.swift */; };
 		497D6C5F2513644A007DE651 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C5E2513644A007DE651 /* FeedViewController.swift */; };
 		497D6C61251367C0007DE651 /* FeedProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C60251367C0007DE651 /* FeedProductTableViewCell.swift */; };
+		497D6C6325136F16007DE651 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C6225136F16007DE651 /* ProductDetailViewController.swift */; };
+		497D6C652513739D007DE651 /* ProductImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C642513739D007DE651 /* ProductImageViewController.swift */; };
+		497D6C6725137857007DE651 /* ProductDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C6625137857007DE651 /* ProductDetailTableViewCell.swift */; };
+		497D6C6925137862007DE651 /* BuyButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C6825137862007DE651 /* BuyButtonTableViewCell.swift */; };
+		497D6C6B2513786D007DE651 /* ShowDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C6A2513786D007DE651 /* ShowDetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		497D6C5A251363F6007DE651 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		497D6C5E2513644A007DE651 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		497D6C60251367C0007DE651 /* FeedProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProductTableViewCell.swift; sourceTree = "<group>"; };
+		497D6C6225136F16007DE651 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		497D6C642513739D007DE651 /* ProductImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageViewController.swift; sourceTree = "<group>"; };
+		497D6C6625137857007DE651 /* ProductDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewCell.swift; sourceTree = "<group>"; };
+		497D6C6825137862007DE651 /* BuyButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonTableViewCell.swift; sourceTree = "<group>"; };
+		497D6C6A2513786D007DE651 /* ShowDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,11 @@
 				497D6C5A251363F6007DE651 /* Product.swift */,
 				497D6C5E2513644A007DE651 /* FeedViewController.swift */,
 				497D6C60251367C0007DE651 /* FeedProductTableViewCell.swift */,
+				497D6C6225136F16007DE651 /* ProductDetailViewController.swift */,
+				497D6C6625137857007DE651 /* ProductDetailTableViewCell.swift */,
+				497D6C6825137862007DE651 /* BuyButtonTableViewCell.swift */,
+				497D6C6A2513786D007DE651 /* ShowDetailTableViewCell.swift */,
+				497D6C642513739D007DE651 /* ProductImageViewController.swift */,
 				497D6C51251360DC007DE651 /* StoryBoards */,
 				497D6C4325135F5F007DE651 /* Assets.xcassets */,
 				497D6C4825135F5F007DE651 /* Info.plist */,
@@ -173,7 +188,12 @@
 			files = (
 				497D6C3F25135F5F007DE651 /* ViewController.swift in Sources */,
 				497D6C5B251363F6007DE651 /* Product.swift in Sources */,
+				497D6C6325136F16007DE651 /* ProductDetailViewController.swift in Sources */,
 				497D6C5F2513644A007DE651 /* FeedViewController.swift in Sources */,
+				497D6C6925137862007DE651 /* BuyButtonTableViewCell.swift in Sources */,
+				497D6C652513739D007DE651 /* ProductImageViewController.swift in Sources */,
+				497D6C6B2513786D007DE651 /* ShowDetailTableViewCell.swift in Sources */,
+				497D6C6725137857007DE651 /* ProductDetailTableViewCell.swift in Sources */,
 				497D6C3B25135F5F007DE651 /* AppDelegate.swift in Sources */,
 				497D6C3D25135F5F007DE651 /* SceneDelegate.swift in Sources */,
 				497D6C61251367C0007DE651 /* FeedProductTableViewCell.swift in Sources */,

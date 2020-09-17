@@ -14,6 +14,13 @@ class FeedProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     
+    var product : Product?{
+        didSet{
+            updateUI()
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,4 +32,13 @@ class FeedProductTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func updateUI(){
+        
+        if let product = product{
+            
+            productImage.image = product.images?.first
+            productName.text = product.name
+            productPrice.text = "$ \(product.price!)"
+        }
+    }
 }
