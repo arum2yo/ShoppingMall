@@ -13,6 +13,13 @@
 		497D6C4225135F5F007DE651 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497D6C4025135F5F007DE651 /* Main.storyboard */; };
 		497D6C4425135F5F007DE651 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497D6C4325135F5F007DE651 /* Assets.xcassets */; };
 		497D6C4725135F5F007DE651 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497D6C4525135F5F007DE651 /* LaunchScreen.storyboard */; };
+		497D6C50251360CE007DE651 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497D6C4E251360CE007DE651 /* Home.storyboard */; };
+		497D6C542513611B007DE651 /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497D6C522513611B007DE651 /* Orders.storyboard */; };
+		497D6C5625136149007DE651 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497D6C5525136149007DE651 /* Profile.storyboard */; };
+		497D6C592513615E007DE651 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497D6C572513615E007DE651 /* Payment.storyboard */; };
+		497D6C5B251363F6007DE651 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C5A251363F6007DE651 /* Product.swift */; };
+		497D6C5F2513644A007DE651 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C5E2513644A007DE651 /* FeedViewController.swift */; };
+		497D6C61251367C0007DE651 /* FeedProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C60251367C0007DE651 /* FeedProductTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		497D6C4325135F5F007DE651 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		497D6C4625135F5F007DE651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		497D6C4825135F5F007DE651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		497D6C4F251360CE007DE651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		497D6C532513611B007DE651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Orders.storyboard; sourceTree = "<group>"; };
+		497D6C5525136149007DE651 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = SOURCE_ROOT; };
+		497D6C582513615E007DE651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Payment.storyboard; sourceTree = "<group>"; };
+		497D6C5A251363F6007DE651 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		497D6C5E2513644A007DE651 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		497D6C60251367C0007DE651 /* FeedProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedProductTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +73,27 @@
 				497D6C3A25135F5F007DE651 /* AppDelegate.swift */,
 				497D6C3C25135F5F007DE651 /* SceneDelegate.swift */,
 				497D6C3E25135F5F007DE651 /* ViewController.swift */,
-				497D6C4025135F5F007DE651 /* Main.storyboard */,
+				497D6C5A251363F6007DE651 /* Product.swift */,
+				497D6C5E2513644A007DE651 /* FeedViewController.swift */,
+				497D6C60251367C0007DE651 /* FeedProductTableViewCell.swift */,
+				497D6C51251360DC007DE651 /* StoryBoards */,
 				497D6C4325135F5F007DE651 /* Assets.xcassets */,
-				497D6C4525135F5F007DE651 /* LaunchScreen.storyboard */,
 				497D6C4825135F5F007DE651 /* Info.plist */,
 			);
 			path = ShoppingMall;
+			sourceTree = "<group>";
+		};
+		497D6C51251360DC007DE651 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				497D6C4025135F5F007DE651 /* Main.storyboard */,
+				497D6C4E251360CE007DE651 /* Home.storyboard */,
+				497D6C522513611B007DE651 /* Orders.storyboard */,
+				497D6C5525136149007DE651 /* Profile.storyboard */,
+				497D6C572513615E007DE651 /* Payment.storyboard */,
+				497D6C4525135F5F007DE651 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +154,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497D6C5625136149007DE651 /* Profile.storyboard in Resources */,
+				497D6C592513615E007DE651 /* Payment.storyboard in Resources */,
 				497D6C4725135F5F007DE651 /* LaunchScreen.storyboard in Resources */,
 				497D6C4425135F5F007DE651 /* Assets.xcassets in Resources */,
+				497D6C542513611B007DE651 /* Orders.storyboard in Resources */,
 				497D6C4225135F5F007DE651 /* Main.storyboard in Resources */,
+				497D6C50251360CE007DE651 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				497D6C3F25135F5F007DE651 /* ViewController.swift in Sources */,
+				497D6C5B251363F6007DE651 /* Product.swift in Sources */,
+				497D6C5F2513644A007DE651 /* FeedViewController.swift in Sources */,
 				497D6C3B25135F5F007DE651 /* AppDelegate.swift in Sources */,
 				497D6C3D25135F5F007DE651 /* SceneDelegate.swift in Sources */,
+				497D6C61251367C0007DE651 /* FeedProductTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +197,30 @@
 				497D6C4625135F5F007DE651 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		497D6C4E251360CE007DE651 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				497D6C4F251360CE007DE651 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		497D6C522513611B007DE651 /* Orders.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				497D6C532513611B007DE651 /* Base */,
+			);
+			name = Orders.storyboard;
+			sourceTree = "<group>";
+		};
+		497D6C572513615E007DE651 /* Payment.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				497D6C582513615E007DE651 /* Base */,
+			);
+			name = Payment.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
