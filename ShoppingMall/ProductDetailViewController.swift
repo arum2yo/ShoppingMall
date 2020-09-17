@@ -19,6 +19,8 @@ class ProductDetailViewController: UIViewController {
         static let productDetailCell = "ProductDetailCell"
         static let buyButtonCell = "BuyButtonCell"
         static let showProductDetailCell = "ShowProductDetailCell"
+        static let suggestTableViewCell = "SuggestTableViewCell"
+        static let suggestCollectionViewCell = "SuggestCollectionViewCell"
     }
     
     override func viewDidLoad() {
@@ -49,6 +51,7 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.productDetailCell, for: indexPath) as! ProductDetailTableViewCell
             
             cell.product = product
+            cell.selectionStyle = .none
             
             return cell
             
@@ -58,7 +61,7 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.buyButtonCell, for: indexPath) as! BuyButtonTableViewCell
             
             cell.product = product
-            
+            cell.selectionStyle = .none
             
             return cell
             
@@ -67,9 +70,16 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.showProductDetailCell, for: indexPath) as! ShowDetailTableViewCell
             
+            cell.selectionStyle = .none
+            return cell
+        } else if indexPath.row == 3{
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.suggestTableViewCell, for: indexPath) as! SuggestTableViewCell
+            
+            
+            cell.selectionStyle = .none
             return cell
         }
-        
         
         return UITableViewCell()
     }
@@ -85,7 +95,60 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
         } else if indexPath.row == 2 {
             
             return  65
+        } else if indexPath.row == 3 {
+            
+            return tableView.bounds.width + 200
+            
         }
         return 0
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 3 {
+            
+            if let cell = cell as? SuggestTableViewCell{
+                
+                cell.collectionView.dataSource = self
+                cell.collectionView.delegate = self
+                cell.collectionView.reloadData()
+                cell.collectionView.isScrollEnabled = false
+            }
+        }
+    }
 }
+
+extension ProductDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.suggestCollectionViewCell, for: indexPath) as! SuggestImageCollectionViewCell
+        
+        let products = Product.fetchProducts()
+        cell.image = products[indexPath.item].images?.first
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout{
+            
+           layout.minimumLineSpacing = 5.0
+            layout.minimumLineSpacing = 2.5
+            let itemWidth = (collectionView.bounds.width - 5.0) / 2.0
+            return CGSize(width: itemWidth, height: itemWidth)
+        }
+        return CGSize.zero
+    }
+
+}
+
+

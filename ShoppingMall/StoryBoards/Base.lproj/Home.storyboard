@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -219,13 +220,69 @@
                                             <constraint firstItem="683-ka-EQr" firstAttribute="centerY" secondItem="XIE-nc-wnL" secondAttribute="centerY" id="Yba-PC-S2O"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="400" id="z3a-Ge-vEx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SuggestTableViewCell" rowHeight="400" id="z3a-Ge-vEx" customClass="SuggestTableViewCell" customModule="ShoppingMall" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="752" width="414" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z3a-Ge-vEx" id="D90-hY-I33">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU MIGHT ALSO LIKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTn-sp-yvZ">
+                                                    <rect key="frame" x="145" y="29" width="124" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SFT-Tv-98t">
+                                                    <rect key="frame" x="0.0" y="77" width="414" height="323"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="2.5" id="6gt-Np-KUe">
+                                                        <size key="itemSize" width="185" height="185"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SuggestCollectionViewCell" id="1e3-MO-3AI" customClass="SuggestImageCollectionViewCell" customModule="ShoppingMall" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UUB-SI-PbR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hni-A7-X68">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="hni-A7-X68" firstAttribute="leading" secondItem="UUB-SI-PbR" secondAttribute="leading" id="2nr-oe-vGD"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="hni-A7-X68" secondAttribute="bottom" id="K4x-U3-6uU"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="hni-A7-X68" secondAttribute="trailing" id="cH8-i9-kqP"/>
+                                                                    <constraint firstItem="hni-A7-X68" firstAttribute="top" secondItem="UUB-SI-PbR" secondAttribute="top" id="tPE-Vw-Tbg"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <size key="customSize" width="185" height="185"/>
+                                                            <connections>
+                                                                <outlet property="suggestImage" destination="hni-A7-X68" id="ecm-aI-5aP"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="SFT-Tv-98t" secondAttribute="bottom" id="bAl-pH-dkm"/>
+                                                <constraint firstAttribute="trailing" secondItem="SFT-Tv-98t" secondAttribute="trailing" id="mp3-47-hFw"/>
+                                                <constraint firstItem="SFT-Tv-98t" firstAttribute="top" secondItem="RTn-sp-yvZ" secondAttribute="bottom" constant="27.5" id="riz-oB-CNX"/>
+                                                <constraint firstItem="SFT-Tv-98t" firstAttribute="leading" secondItem="D90-hY-I33" secondAttribute="leading" id="rr4-zs-cWD"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="RTn-sp-yvZ" firstAttribute="centerX" secondItem="z3a-Ge-vEx" secondAttribute="centerX" id="FdY-6H-ppa"/>
+                                            <constraint firstItem="RTn-sp-yvZ" firstAttribute="top" secondItem="z3a-Ge-vEx" secondAttribute="top" constant="29" id="M5I-cv-fgH"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="collectionView" destination="SFT-Tv-98t" id="qBb-Y7-SF6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
