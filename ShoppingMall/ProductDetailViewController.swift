@@ -12,6 +12,9 @@ class ProductDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var productImagesHeaderView: ProductImageHeaderView!
+    
+    
     var product : Product! //무조건 데이터가 있어서, 눌러지는거니까 ~~~
     
     struct Storyboard {

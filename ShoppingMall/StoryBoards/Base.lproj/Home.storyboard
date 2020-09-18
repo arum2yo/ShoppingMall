@@ -109,14 +109,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2XL-8b-E2Q">
                                 <rect key="frame" x="0.0" y="88" width="414" height="1129"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="IqD-1f-0HG">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="IqD-1f-0HG" customClass="ProductImageHeaderView" customModule="ShoppingMall" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNh-Jp-y7g">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                             <connections>
-                                                <segue destination="p4B-Iu-fke" kind="embed" id="YsA-fk-Uo8"/>
+                                                <segue destination="JAF-qu-MiE" kind="embed" id="TRv-NT-fCd"/>
                                             </connections>
                                         </containerView>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-SM-Upw">
@@ -132,6 +132,9 @@
                                         <constraint firstAttribute="bottom" secondItem="gNh-Jp-y7g" secondAttribute="bottom" id="e9I-T5-40n"/>
                                         <constraint firstItem="fSI-SM-Upw" firstAttribute="centerX" secondItem="IqD-1f-0HG" secondAttribute="centerX" id="eqS-tA-LdZ"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="pageCOntrol" destination="fSI-SM-Upw" id="thd-B2-Qod"/>
+                                    </connections>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDetailCell" rowHeight="180" id="DUP-xV-dnk" customClass="ProductDetailTableViewCell" customModule="ShoppingMall" customModuleProvider="target">
@@ -303,6 +306,7 @@
                     <navigationItem key="navigationItem" id="Ddy-dF-bcW"/>
                     <size key="freeformSize" width="414" height="1300"/>
                     <connections>
+                        <outlet property="productImagesHeaderView" destination="IqD-1f-0HG" id="iQX-Ju-Quw"/>
                         <outlet property="tableView" destination="2XL-8b-E2Q" id="32b-vy-ab7"/>
                     </connections>
                 </viewController>
@@ -332,21 +336,36 @@
         <!--Product Image View Controller-->
         <scene sceneID="ROR-V9-CD3">
             <objects>
-                <viewController id="p4B-Iu-fke" customClass="ProductImageViewController" customModule="ShoppingMall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductImageView" id="p4B-Iu-fke" customClass="ProductImageViewController" customModule="ShoppingMall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xCh-2S-3C6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ONT-gY-3QT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ONT-gY-3QT" firstAttribute="bottom" secondItem="S03-Lv-Q6o" secondAttribute="bottom" id="8Qk-Aq-Wf7"/>
+                            <constraint firstItem="ONT-gY-3QT" firstAttribute="top" secondItem="S03-Lv-Q6o" secondAttribute="top" id="ZdN-DV-ddj"/>
+                            <constraint firstItem="S03-Lv-Q6o" firstAttribute="trailing" secondItem="ONT-gY-3QT" secondAttribute="trailing" id="l5h-0c-b4H"/>
+                            <constraint firstItem="ONT-gY-3QT" firstAttribute="leading" secondItem="S03-Lv-Q6o" secondAttribute="leading" id="muo-5W-qs5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S03-Lv-Q6o"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="ONT-gY-3QT" id="Keh-qG-JgO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sfi-8J-Brj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968" y="-624"/>
+            <point key="canvasLocation" x="1966.6666666666667" y="-624.10714285714278"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Product Images Page View Controller-->
         <scene sceneID="HYb-7W-S4s">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="JAF-qu-MiE" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="JAF-qu-MiE" customClass="ProductImagesPageViewController" customModule="ShoppingMall" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEw-pO-EDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2657" y="-466"/>

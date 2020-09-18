@@ -27,6 +27,8 @@
 		497D6C6B2513786D007DE651 /* ShowDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C6A2513786D007DE651 /* ShowDetailTableViewCell.swift */; };
 		497D6C6D25137B9A007DE651 /* SuggestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C6C25137B9A007DE651 /* SuggestTableViewCell.swift */; };
 		497D6C6F25137BCD007DE651 /* SuggestImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C6E25137BCD007DE651 /* SuggestImageCollectionViewCell.swift */; };
+		497D6C712513807E007DE651 /* ProductImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C702513807E007DE651 /* ProductImageHeaderView.swift */; };
+		497D6C7525138235007DE651 /* ProductImagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C7425138235007DE651 /* ProductImagesPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		497D6C6A2513786D007DE651 /* ShowDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailTableViewCell.swift; sourceTree = "<group>"; };
 		497D6C6C25137B9A007DE651 /* SuggestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestTableViewCell.swift; sourceTree = "<group>"; };
 		497D6C6E25137BCD007DE651 /* SuggestImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		497D6C702513807E007DE651 /* ProductImageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageHeaderView.swift; sourceTree = "<group>"; };
+		497D6C7425138235007DE651 /* ProductImagesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 				497D6C642513739D007DE651 /* ProductImageViewController.swift */,
 				497D6C6C25137B9A007DE651 /* SuggestTableViewCell.swift */,
 				497D6C6E25137BCD007DE651 /* SuggestImageCollectionViewCell.swift */,
+				497D6C702513807E007DE651 /* ProductImageHeaderView.swift */,
+				497D6C7425138235007DE651 /* ProductImagesPageViewController.swift */,
 				497D6C51251360DC007DE651 /* StoryBoards */,
 				497D6C4325135F5F007DE651 /* Assets.xcassets */,
 				497D6C4825135F5F007DE651 /* Info.plist */,
@@ -200,7 +206,9 @@
 				497D6C652513739D007DE651 /* ProductImageViewController.swift in Sources */,
 				497D6C6D25137B9A007DE651 /* SuggestTableViewCell.swift in Sources */,
 				497D6C6B2513786D007DE651 /* ShowDetailTableViewCell.swift in Sources */,
+				497D6C7525138235007DE651 /* ProductImagesPageViewController.swift in Sources */,
 				497D6C6725137857007DE651 /* ProductDetailTableViewCell.swift in Sources */,
+				497D6C712513807E007DE651 /* ProductImageHeaderView.swift in Sources */,
 				497D6C6F25137BCD007DE651 /* SuggestImageCollectionViewCell.swift in Sources */,
 				497D6C3B25135F5F007DE651 /* AppDelegate.swift in Sources */,
 				497D6C3D25135F5F007DE651 /* SceneDelegate.swift in Sources */,
