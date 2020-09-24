@@ -14,7 +14,7 @@ class BuyButtonTableViewCell: UITableViewCell {
     
     var product: Product!{
         didSet{
-            buyButton.setTitle("BUY FOR $ \(product.price!)", for: [])
+            buyButton.setTitle("BUY FOR $ \(product.price!)", for: .normal)
         }
     }
     override func awakeFromNib() {

@@ -9,8 +9,10 @@
 import UIKit
 
 protocol ProductImagesPageViewControllerDelegate: class {
-    func setupPageController(numberOfPage: Int)
-    func turnPageController(to index: Int)
+    
+    func setupPageController(numberOfPage: Int) //page에 나오는 점 갯수.
+    func turnPageController(to index: Int) // 현재 표시된페이지 점.
+    
 }
 
 class ProductImagesPageViewController: UIPageViewController {
@@ -26,7 +28,7 @@ class ProductImagesPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       automaticallyAdjustsScrollViewInsets = false //곧 단종될 예정
+        automaticallyAdjustsScrollViewInsets = false //곧 단종될 예정
         dataSource = self
         delegate = self
         

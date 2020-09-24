@@ -32,10 +32,6 @@ class ProductDetailViewController: UIViewController {
         title =  product.name
         
     }
-    
-
-    
-
 }
 
 extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSource{

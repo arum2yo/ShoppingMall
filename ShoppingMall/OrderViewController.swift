@@ -1,30 +1,19 @@
 //
-//  ProductImageViewController.swift
+//  OrderViewController.swift
 //  ShoppingMall
 //
-//  Created by Ahreum CHO on 2020/09/17.
+//  Created by Ahreum CHO on 2020/09/24.
 //  Copyright © 2020 Ahreum CHO. All rights reserved.
 //
 
 import UIKit
 
-class ProductImageViewController: UIViewController {
-    @IBOutlet weak var imageView: UIImageView!
-    
-    var image: UIImage?{
-        
-        didSet{
-            
-            self.imageView.image = image
-            
-        }
-    }
-    
-    
+class OrderViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.imageView.image = image
+        // Do any additional setup after loading the view.
     }
     
 

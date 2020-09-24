@@ -121,6 +121,8 @@
                                         </containerView>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-SM-Upw">
                                             <rect key="frame" x="187.5" y="357" width="39" height="37"/>
+                                            <color key="pageIndicatorTintColor" red="1" green="0.27058823529999998" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="currentPageIndicatorTintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </pageControl>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -360,12 +362,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sfi-8J-Brj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966.6666666666667" y="-624.10714285714278"/>
+            <point key="canvasLocation" x="1888" y="-788"/>
         </scene>
         <!--Product Images Page View Controller-->
         <scene sceneID="HYb-7W-S4s">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="JAF-qu-MiE" customClass="ProductImagesPageViewController" customModule="ShoppingMall" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="JAF-qu-MiE" customClass="ProductImagesPageViewController" customModule="ShoppingMall" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEw-pO-EDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2657" y="-466"/>
