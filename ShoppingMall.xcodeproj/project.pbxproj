@@ -30,6 +30,8 @@
 		497D6C712513807E007DE651 /* ProductImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C702513807E007DE651 /* ProductImageHeaderView.swift */; };
 		497D6C7525138235007DE651 /* ProductImagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D6C7425138235007DE651 /* ProductImagesPageViewController.swift */; };
 		49888157251CAA1200358572 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49888156251CAA1200358572 /* OrderViewController.swift */; };
+		4988815A251CAFB900358572 /* NumberOfItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49888159251CAFB900358572 /* NumberOfItemTableViewCell.swift */; };
+		4988815D251CAFD100358572 /* ShoppingCartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4988815C251CAFD100358572 /* ShoppingCartItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		497D6C702513807E007DE651 /* ProductImageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageHeaderView.swift; sourceTree = "<group>"; };
 		497D6C7425138235007DE651 /* ProductImagesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesPageViewController.swift; sourceTree = "<group>"; };
 		49888156251CAA1200358572 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		49888159251CAFB900358572 /* NumberOfItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfItemTableViewCell.swift; sourceTree = "<group>"; };
+		4988815C251CAFD100358572 /* ShoppingCartItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +98,8 @@
 				497D6C3C25135F5F007DE651 /* SceneDelegate.swift */,
 				497D6C3E25135F5F007DE651 /* ViewController.swift */,
 				497D6C5A251363F6007DE651 /* Product.swift */,
-				49888156251CAA1200358572 /* OrderViewController.swift */,
+				4988815B251CAFBC00358572 /* OrderCell */,
+				49888158251CAF8B00358572 /* OrderController */,
 				49888154251CA9B800358572 /* HomeController  */,
 				49888155251CA9DD00358572 /* HomeCell */,
 				497D6C51251360DC007DE651 /* StoryBoards */,
@@ -120,11 +125,11 @@
 		49888154251CA9B800358572 /* HomeController  */ = {
 			isa = PBXGroup;
 			children = (
-				497D6C5E2513644A007DE651 /* FeedViewController.swift */,
 				497D6C6225136F16007DE651 /* ProductDetailViewController.swift */,
 				497D6C642513739D007DE651 /* ProductImageViewController.swift */,
 				497D6C7425138235007DE651 /* ProductImagesPageViewController.swift */,
 				497D6C702513807E007DE651 /* ProductImageHeaderView.swift */,
+				497D6C5E2513644A007DE651 /* FeedViewController.swift */,
 			);
 			path = "HomeController ";
 			sourceTree = "<group>";
@@ -140,6 +145,23 @@
 				497D6C6E25137BCD007DE651 /* SuggestImageCollectionViewCell.swift */,
 			);
 			path = HomeCell;
+			sourceTree = "<group>";
+		};
+		49888158251CAF8B00358572 /* OrderController */ = {
+			isa = PBXGroup;
+			children = (
+				49888156251CAA1200358572 /* OrderViewController.swift */,
+			);
+			path = OrderController;
+			sourceTree = "<group>";
+		};
+		4988815B251CAFBC00358572 /* OrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				49888159251CAFB900358572 /* NumberOfItemTableViewCell.swift */,
+				4988815C251CAFD100358572 /* ShoppingCartItemTableViewCell.swift */,
+			);
+			path = OrderCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,10 +240,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				497D6C3F25135F5F007DE651 /* ViewController.swift in Sources */,
+				4988815A251CAFB900358572 /* NumberOfItemTableViewCell.swift in Sources */,
 				497D6C5B251363F6007DE651 /* Product.swift in Sources */,
 				497D6C6325136F16007DE651 /* ProductDetailViewController.swift in Sources */,
 				497D6C5F2513644A007DE651 /* FeedViewController.swift in Sources */,
 				497D6C6925137862007DE651 /* BuyButtonTableViewCell.swift in Sources */,
+				4988815D251CAFD100358572 /* ShoppingCartItemTableViewCell.swift in Sources */,
 				497D6C652513739D007DE651 /* ProductImageViewController.swift in Sources */,
 				497D6C6D25137B9A007DE651 /* SuggestTableViewCell.swift in Sources */,
 				497D6C6B2513786D007DE651 /* ShowDetailTableViewCell.swift in Sources */,
