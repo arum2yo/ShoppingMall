@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FeedProductTableViewCell: UITableViewCell {
     
@@ -36,9 +37,12 @@ class FeedProductTableViewCell: UITableViewCell {
         
         if let product = product{
             
-            productImage.image = product.images?.first
+//            productImage.image = UIImage(named: "http://localhost:1337\(product.images[0].url)")
+            
+            productImage.kf.setImage(with: URL(string: "http://localhost:1337\(product.images[0].url)"), placeholder: nil)
             productName.text = product.name
-            productPrice.text = "$ \(product.price!)"
+            productPrice.text = "$ \(product.price)"
+            
         }
     }
 }

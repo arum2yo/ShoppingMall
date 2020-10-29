@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 protocol ProductImagesPageViewControllerDelegate: class {
     
@@ -17,7 +18,11 @@ protocol ProductImagesPageViewControllerDelegate: class {
 
 class ProductImagesPageViewController: UIPageViewController {
     
-    var images: [UIImage]? = Product.fetchProducts().first!.images
+    var product : Product?
+    var provider = MoyaProvider<ProductProvider>()
+    
+    var images: [ProductImage]?
+       
     weak var pageviewControllerDelegate: ProductImagesPageViewControllerDelegate?
     
     
@@ -32,62 +37,64 @@ class ProductImagesPageViewController: UIPageViewController {
         dataSource = self
         delegate = self
         
-        self.turnToPage(index: 0)
+//        print("IMages", images)
+//        self.turnToPage(index: 0)
     }
+    
   
     lazy var controllers: [UIViewController] = {
         
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         var controllers = [UIViewController]()
         
-        if let images = self.images{
-            
-            for image in images{
-                
-                let productImageVC = storyboard.instantiateViewController(withIdentifier: Storyboard.productImageView)
-                
-                controllers.append(productImageVC)
-            }
-            
-        }
+//        if let images = self.images{
+//
+//            for image in images{
+//
+//                let productImageVC = storyboard.instantiateViewController(withIdentifier: Storyboard.productImageView)
+//
+//                controllers.append(productImageVC)
+//            }
+//
+//        }
         self.pageviewControllerDelegate?.setupPageController(numberOfPage: controllers.count)
         
         return controllers
         
     }()
     
-    func turnToPage(index: Int){
+//    func turnToPage(index: Int){
+//
+//        let controller = controllers[index]
+//        var direction = UIPageViewController.NavigationDirection.forward
+//
+//        if let currentVC = viewControllers?.first{
+//
+//            let currentIndex = controllers.firstIndex(of: currentVC)
+//            if currentIndex! > index {
+//
+//                direction = .reverse
+//            }
+//        }
         
-        let controller = controllers[index]
-        var direction = UIPageViewController.NavigationDirection.forward
+//        self.configDisplaying(viewcontroller: controller)
         
-        if let currentVC = viewControllers?.first{
-            
-            let currentIndex = controllers.firstIndex(of: currentVC)
-            if currentIndex! > index {
-                
-                direction = .reverse
-            }
-        }
-        
-        self.configDisplaying(viewcontroller: controller)
-        
-        setViewControllers([controller], direction: direction, animated: true, completion: nil)
-    }
+//        setViewControllers([controller], direction: direction, animated: true, completion: nil)
+//    }
     
     func configDisplaying(viewcontroller: UIViewController){
         
-        for (index, vc) in controllers.enumerated(){
+//        for (index, vc) in controllers.enumerated(){
             
-            if viewcontroller === vc {
-                
-                if let productImageVC  = viewcontroller as? ProductImageViewController{
-                    
-                    productImageVC.image = self.images?[index]
-                    self.pageviewControllerDelegate?.turnPageController(to: index)
-                }
-            }
-        }
+//            if viewcontroller === vc {
+//
+//                if let productImageVC  = viewcontroller as? ProductImageViewController{
+//
+////                    productImageVC.image = self.images?[index]
+//                    self.pageviewControllerDelegate?.turnPageController(to: index)
+//                }
+//            }
+//        }
     }
     
 }

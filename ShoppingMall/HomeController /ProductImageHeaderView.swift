@@ -12,6 +12,8 @@ class ProductImageHeaderView: UIView {
     
     @IBOutlet weak var pageCOntrol: UIPageControl!
    
+    var images : [ProductImage] = []
+    
    
 }
 

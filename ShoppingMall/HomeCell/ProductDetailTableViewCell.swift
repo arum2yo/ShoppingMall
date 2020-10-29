@@ -18,6 +18,7 @@ class ProductDetailTableViewCell: UITableViewCell {
         didSet{
             productName.text = product.name
             productDescription.text = product.description
+            
         }
     }
     

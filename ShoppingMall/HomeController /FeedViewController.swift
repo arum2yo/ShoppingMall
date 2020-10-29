@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import Alamofire
+import Moya
 
 class FeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var products:[Product]?
+    var products : [Product] = []
+    
+     let provider = MoyaProvider<ProductProvider>()
     
     private var selectedProduct : Product?
     
-    
+    private let url = "http://localhost:1337/products"
     
     struct Storyboard{
         
@@ -30,18 +34,16 @@ class FeedViewController: UIViewController {
 
         navigationItem.title = " Product Feed "
         
-        fetchProducts()
         
+        getData()
 
     }
     
-    
-    func fetchProducts(){
+    func getData(){
         
-        products = Product.fetchProducts()
-        
-        
-        DispatchQueue.main.async {
+        ProductNetworking.total { (products) in
+            
+            self.products = products
             self.tableView.reloadData()
         }
     }
@@ -66,24 +68,22 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if let products = products{
-            
-            return products.count //최대한 옵셔널 사용 제하려고~
-        }
-        return 0
-        
+            return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.feedProductCell, for: indexPath) as! FeedProductTableViewCell
         
-        if let products = products{
-            
+//        if let products = products{
+
             let product = products[indexPath.row]
             cell.product = product
+//            cell.productImage.image = UIImage(named: product.images.first!)
+
             cell.selectionStyle = .none
-        }
+
+//        }
         
         return cell
     }
@@ -91,7 +91,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        selectedProduct = products![indexPath.row]
+        selectedProduct = products[indexPath.row]
         performSegue(withIdentifier: Storyboard.showProductDetail, sender: nil)
         
         

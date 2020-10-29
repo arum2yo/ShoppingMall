@@ -16,7 +16,7 @@ class ShoppingCartItemTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLable: UILabel!
     @IBOutlet weak var removeButton: UIButton!
     
-    var product: Product!{
+    var order: Order!{
         didSet{
             
             updateUI()
@@ -26,9 +26,9 @@ class ShoppingCartItemTableViewCell: UITableViewCell {
     
     func updateUI(){
         
-        productImage.image = product.images?.first
-        productName.text = product.name
-        priceLable.text = "$ \(product.price)!"
+//        productImage.image = product.images?.first
+//        productName.text = product.name
+//        priceLable.text = "$ \(product.price)!"
         
     }
     override func awakeFromNib() {

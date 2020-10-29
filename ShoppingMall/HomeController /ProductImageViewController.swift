@@ -11,6 +11,8 @@ import UIKit
 class ProductImageViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
+    var images:[ProductImage] = []
+    
     var image: UIImage?{
         
         didSet{

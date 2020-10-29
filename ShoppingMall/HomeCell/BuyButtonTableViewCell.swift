@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import Moya
 
 class BuyButtonTableViewCell: UITableViewCell {
 
@@ -14,7 +15,7 @@ class BuyButtonTableViewCell: UITableViewCell {
     
     var product: Product!{
         didSet{
-            buyButton.setTitle("BUY FOR $ \(product.price!)", for: .normal)
+            buyButton.setTitle("BUY FOR $ \(product.price)", for: .normal)
         }
     }
     override func awakeFromNib() {

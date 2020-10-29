@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 class ProductDetailViewController: UIViewController {
 
@@ -16,6 +17,10 @@ class ProductDetailViewController: UIViewController {
     
     
     var product : Product! //무조건 데이터가 있어서, 눌러지는거니까 ~~~
+    let provider = MoyaProvider<ProductProvider>()
+    
+    let pageImageViewController : ProductImageViewController? = nil
+    
     
     struct Storyboard {
         
@@ -30,8 +35,31 @@ class ProductDetailViewController: UIViewController {
         super.viewDidLoad()
 
         title =  product.name
+        print("product.id",product.id!)
+        
+        getData()
+        
+        pageImageViewController?.images = product.images
+        
         
     }
+    
+    func getData(){
+        ProductNetworking.detail(id: product.id!) { (result) in
+            self.product = result
+            self.tableView.reloadData()
+            
+        }
+    }
+    
+    @IBAction func backBTNTab(_ sender: Any) {
+        
+        if let navi = self.navigationController{
+            
+            navi.popViewController(animated: true)
+        }
+    }
+    
 }
 
 extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSource{
@@ -130,8 +158,8 @@ extension ProductDetailViewController: UICollectionViewDataSource, UICollectionV
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.suggestCollectionViewCell, for: indexPath) as! SuggestImageCollectionViewCell
         
-        let products = Product.fetchProducts()
-        cell.image = products[indexPath.item].images?.first
+//        let products = Product.fetchProducts()
+//        cell.image = products[indexPath.item].images?.first
         
         return cell
     }
